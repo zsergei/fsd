@@ -1,0 +1,39 @@
+.shell {
+	--shell-sidenav-width: 14rem;
+	height: 100%;
+}
+
+.shell__drawer,
+.shell__drawer.mat-drawer {
+	box-sizing: border-box;
+}
+
+.shell__drawer {
+	width: var(--shell-sidenav-width);
+}
+
+.shell__drawer.mat-drawer {
+	--mat-sidenav-container-shape: 0;
+	background-color: var(--mat-sys-surface-container-low);
+	border-radius: 0;
+	border-right: none;
+}
+
+.shell__content {
+	background-color: var(--mat-sys-surface);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	position: relative;
+}
+
+.shell__main {
+	--shell-main-area-bg: #fcfcfc;
+	--shell-main-space-md: 1.5rem;
+	background-color: var(--shell-main-area-bg);
+	box-sizing: border-box;
+	flex: 1;
+	min-height: 0;
+	padding: var(--shell-main-space-md);
+}

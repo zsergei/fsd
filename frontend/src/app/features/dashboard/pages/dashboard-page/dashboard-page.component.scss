@@ -1,0 +1,48 @@
+.dashboard__header {
+	margin-bottom: 0.25rem;
+}
+
+.dashboard__title {
+	color: var(--mat-sys-on-surface);
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.334;
+	margin: 0 0 0.5rem;
+}
+
+.dashboard__intro {
+	color: var(--mat-sys-on-surface-variant);
+	font-size: 0.875rem;
+	line-height: 1.43;
+	margin: 0 0 1.5rem;
+	max-width: 42rem;
+}
+
+.dashboard__grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+}
+
+.dashboard__card.mat-mdc-card {
+	--mdc-elevated-card-container-color: var(--mat-sys-surface);
+	--mdc-elevated-card-container-elevation: var(--mat-sys-level0);
+	border: 1px solid var(--mat-sys-outline-variant);
+	border-radius: 0.75rem;
+	box-shadow: none;
+}
+
+.dashboard__card .mat-mdc-card-title {
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	line-height: 1.5;
+}
+
+.dashboard__card-text {
+	color: var(--mat-sys-on-surface-variant);
+	font-size: 0.875rem;
+	line-height: 1.43;
+	margin: 0;
+}

@@ -1,0 +1,24 @@
+<header class="shell-header" [class.shell-header--handset]="isHandset()">
+	<button
+		type="button"
+		class="shell-header__menu-toggle"
+		[attr.aria-controls]="drawerId()"
+		[attr.aria-expanded]="drawerOpened()"
+		[attr.aria-label]="drawerOpened() ? 'Hide navigation menu' : 'Show navigation menu'"
+		(click)="toggleDrawer.emit()"
+	>
+		<mat-icon class="shell-header__menu-toggle-icon" aria-hidden="true">menu</mat-icon>
+	</button>
+	<nav class="shell-header__breadcrumbs" aria-label="Breadcrumb">
+		@for (crumb of breadcrumbs(); track $index) {
+			@if (!$first) {
+				<span class="shell-header__crumb-sep" aria-hidden="true">/</span>
+			}
+			@if (crumb.route) {
+				<a class="shell-header__crumb-link" [routerLink]="crumb.route">{{ crumb.label }}</a>
+			} @else {
+				<span class="shell-header__crumb-current" [attr.aria-current]="$last ? 'page' : null">{{ crumb.label }}</span>
+			}
+		}
+	</nav>
+</header>

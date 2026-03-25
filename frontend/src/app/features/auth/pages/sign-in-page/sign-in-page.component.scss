@@ -1,0 +1,73 @@
+:host {
+	--sign-in-page-bg: #fcfcfc;
+	display: block;
+	height: 100%;
+	min-height: 100%;
+}
+
+.sign-in {
+	align-items: center;
+	background-color: var(--sign-in-page-bg);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	min-height: 100%;
+	padding: 1.5rem;
+}
+
+.sign-in__card {
+	background-color: var(--mat-sys-surface);
+	border: 1px solid var(--mat-sys-outline-variant);
+	border-radius: 0.75rem;
+	box-shadow: none;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	max-width: 26rem;
+	padding: 1.5rem;
+	width: 100%;
+}
+
+.sign-in__brand {
+	align-items: center;
+	column-gap: 0.75rem;
+	display: flex;
+}
+
+.sign-in__brand-mark {
+	display: block;
+	flex-shrink: 0;
+	height: 2rem;
+	object-fit: contain;
+	width: 2rem;
+}
+
+.sign-in__brand-text {
+	color: var(--mat-sys-on-surface);
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.sign-in__airtable-btn {
+	min-width: 14rem;
+	width: 100%;
+}
+
+.sign-in__airtable-icon {
+	display: block;
+	flex-shrink: 0;
+	height: 1.25rem;
+	margin-right: 0.5rem;
+	object-fit: contain;
+	width: 1.25rem;
+}
+
+[dir='rtl'] .sign-in__airtable-icon {
+	margin-left: 0.5rem;
+	margin-right: 0;
+}

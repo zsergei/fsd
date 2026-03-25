@@ -1,0 +1,16 @@
+.shell-placeholder__title {
+	color: var(--mat-sys-on-surface);
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.334;
+	margin: 0 0 0.5rem;
+}
+
+.shell-placeholder__body {
+	color: var(--mat-sys-on-surface-variant);
+	font-size: 0.875rem;
+	line-height: 1.43;
+	margin: 0;
+	max-width: 36rem;
+}

@@ -1,0 +1,21 @@
+<div class="dashboard">
+	<header class="dashboard__header">
+		<h1 class="dashboard__title">Welcome</h1>
+	</header>
+	<p class="dashboard__intro">
+		This console is for managing Airtable integrations, browsing synced data, and running revision history sync.
+		Sections below mirror what you will build next; use the sidebar to open each area when it is ready.
+	</p>
+	<div class="dashboard__grid">
+		@for (section of sections; track section.title) {
+			<mat-card class="dashboard__card">
+				<mat-card-header>
+					<mat-card-title>{{ section.title }}</mat-card-title>
+				</mat-card-header>
+				<mat-card-content>
+					<p class="dashboard__card-text">{{ section.body }}</p>
+				</mat-card-content>
+			</mat-card>
+		}
+	</div>
+</div>

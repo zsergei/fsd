@@ -1,0 +1,56 @@
+<div class="data-grid-page">
+	<div class="data-grid-page__toolbar">
+		<mat-form-field class="data-grid-page__field" appearance="outline" subscriptSizing="dynamic">
+			<mat-label>Integration</mat-label>
+			<mat-select [value]="'airtable'" [disabled]="true">
+				<mat-option value="airtable">Airtable</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="data-grid-page__field data-grid-page__field--collection" appearance="outline" subscriptSizing="dynamic">
+			<mat-label>Collection</mat-label>
+			<mat-select [value]="selectedCollection()" (valueChange)="selectedCollection.set($event)">
+				@for (col of collections; track col) {
+					<mat-option [value]="col">{{ col }}</mat-option>
+				}
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="data-grid-page__search" appearance="outline" subscriptSizing="dynamic">
+			<mat-label>Search</mat-label>
+			<input
+				matInput
+				type="search"
+				autocomplete="off"
+				[value]="quickFilterText()"
+				[disabled]="!isGridReady()"
+				(input)="onSearchInput($event)"
+			/>
+			<mat-icon matSuffix>search</mat-icon>
+		</mat-form-field>
+	</div>
+
+	@if (loading()) {
+		<mat-progress-bar class="data-grid-page__progress" mode="indeterminate" />
+	}
+
+	@if (isGridReady()) {
+		<div class="data-grid-page__grid-wrap">
+			<ag-grid-angular
+				class="data-grid-page__grid"
+				[rowData]="rowData()"
+				[columnDefs]="columnDefs()"
+				[defaultColDef]="defaultColDef"
+				[quickFilterText]="quickFilterText()"
+				[loading]="loading()"
+				[suppressFieldDotNotation]="true"
+				[suppressCellFocus]="true"
+			/>
+		</div>
+	} @else {
+		<div class="data-grid-page__empty">
+			<mat-icon class="data-grid-page__empty-icon">table_chart</mat-icon>
+			<p class="data-grid-page__empty-text">Select a collection to explore the data.</p>
+		</div>
+	}
+</div>

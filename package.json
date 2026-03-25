@@ -1,0 +1,13 @@
+{
+	"name": "fsd-app-monorepo",
+	"private": true,
+	"scripts": {
+		"format": "prettier --write \"backend/**/*.{js,json,md}\" \"frontend/**/*.{ts,html,scss,css,json,md}\" \"*.{json,md,yml,yaml}\"",
+		"format:check": "prettier --check \"backend/**/*.{js,json,md}\" \"frontend/**/*.{ts,html,scss,css,json,md}\" \"*.{json,md,yml,yaml}\"",
+		"dev:backend": "npm run dev --prefix backend",
+		"dev:frontend": "npm run dev --prefix frontend"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3"
+	}
+}

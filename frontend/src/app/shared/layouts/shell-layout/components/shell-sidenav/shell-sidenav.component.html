@@ -1,0 +1,70 @@
+<div class="shell-sidenav__body">
+	<a class="shell-sidenav__brand" routerLink="/" [attr.aria-label]="appTitle + ' home'">
+		<img class="shell-sidenav__brand-mark" height="32" width="32" src="/icons/favicon-32x32.png" alt="" />
+		<span class="shell-sidenav__brand-text">{{ appTitle }}</span>
+	</a>
+
+	<div class="shell-sidenav__nav">
+		<div class="shell-sidenav__scroll">
+			<mat-nav-list aria-label="Main navigation">
+				@for (item of mainNavItems(); track item.id) {
+					<a
+						mat-list-item
+						routerLinkActive="mdc-list-item--activated"
+						ariaCurrentWhenActive="page"
+						[routerLink]="item.disabled ? null : item.link"
+						[routerLinkActiveOptions]="{ exact: true }"
+						[class.shell-sidenav__link--disabled]="item.disabled"
+						[attr.aria-disabled]="item.disabled || null"
+						[attr.tabindex]="item.disabled ? -1 : null"
+					>
+						<mat-icon class="shell-sidenav__icon" matListItemIcon>{{ item.icon }}</mat-icon>
+						<span matListItemTitle>{{ item.label }}</span>
+					</a>
+				}
+			</mat-nav-list>
+			<mat-nav-list aria-label="Actions">
+				<button mat-list-item (click)="requestSync()">
+					<mat-icon class="shell-sidenav__icon" matListItemIcon>sync</mat-icon>
+					<span matListItemTitle>Synchronization</span>
+				</button>
+			</mat-nav-list>
+		</div>
+
+		<div class="shell-sidenav__footer">
+			@if (userEmail()) {
+				<div class="shell-sidenav__user">
+					<mat-icon class="shell-sidenav__user-icon">account_circle</mat-icon>
+					<span class="shell-sidenav__user-email">{{ userEmail() }}</span>
+				</div>
+			}
+			<mat-nav-list aria-label="Secondary navigation">
+				@for (item of bottomNavItems(); track item.id) {
+					@if (item.external) {
+						<a mat-list-item target="_blank" rel="noopener noreferrer" [href]="item.link">
+							<mat-icon class="shell-sidenav__icon" matListItemIcon>{{ item.icon }}</mat-icon>
+							<span matListItemTitle>{{ item.label }}</span>
+						</a>
+					} @else {
+						<a
+							mat-list-item
+							routerLinkActive="mdc-list-item--activated"
+							ariaCurrentWhenActive="page"
+							[routerLink]="item.link"
+							[routerLinkActiveOptions]="{ exact: true }"
+						>
+							<mat-icon class="shell-sidenav__icon" matListItemIcon>{{ item.icon }}</mat-icon>
+							<span matListItemTitle>{{ item.label }}</span>
+						</a>
+					}
+				}
+			</mat-nav-list>
+			<mat-nav-list>
+				<button mat-list-item (click)="signOut()">
+					<mat-icon class="shell-sidenav__icon" matListItemIcon>logout</mat-icon>
+					<span matListItemTitle>Sign out</span>
+				</button>
+			</mat-nav-list>
+		</div>
+	</div>
+</div>

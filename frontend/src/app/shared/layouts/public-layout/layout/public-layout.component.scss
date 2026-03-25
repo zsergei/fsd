@@ -1,0 +1,20 @@
+.public-layout {
+	background-color: var(--mat-sys-surface);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	width: 100%;
+}
+
+.public-layout__main {
+	--public-layout-main-area-bg: #fcfcfc;
+	--public-layout-main-space-md: 1.5rem;
+	background-color: var(--public-layout-main-area-bg);
+	box-sizing: border-box;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 0;
+	padding: var(--public-layout-main-space-md);
+}

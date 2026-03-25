@@ -1,0 +1,9 @@
+:host {
+	display: block;
+}
+
+.airtable-sync-dialog__status {
+	color: var(--mat-sys-on-surface-variant);
+	font-size: 0.875rem;
+	margin-top: 1rem;
+}

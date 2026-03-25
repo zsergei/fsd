@@ -1,0 +1,47 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - backend
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - '3000'
+    env_file:
+      - .env
+      - .env.docker
+    networks:
+      - backend
+    depends_on:
+      - mongo
+
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    expose:
+      - '80'
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./frontend/dist/fsd-app/browser:/usr/share/nginx/html:ro
+    networks:
+      - backend
+      - proxy
+    depends_on:
+      - api
+
+networks:
+  backend:
+  proxy:
+    name: fsd-app_proxy
+
+volumes:
+  mongo_data:

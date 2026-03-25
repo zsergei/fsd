@@ -1,0 +1,19 @@
+<div class="error-page">
+	<div class="error-page__card">
+		<div class="error-page__hero">
+			<mat-icon class="error-page__icon" aria-hidden="true">error_outline</mat-icon>
+			<h1 class="error-page__title">
+				<span class="error-page__title-code">{{ code() }}</span>
+				<span class="error-page__title-text">{{ entry().headline }}</span>
+			</h1>
+		</div>
+		<p class="error-page__description">{{ entry().description }}</p>
+		@if (extraMessage(); as msg) {
+			<p class="error-page__detail">{{ msg }}</p>
+		}
+		<a mat-flat-button color="primary" class="error-page__action" routerLink="/">
+			<mat-icon matButtonIcon>home</mat-icon>
+			Back to home
+		</a>
+	</div>
+</div>

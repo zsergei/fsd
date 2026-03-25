@@ -1,0 +1,22 @@
+<mat-sidenav-container class="shell">
+	<mat-sidenav
+		id="shell-drawer"
+		class="shell__drawer"
+		[mode]="isHandset() ? 'over' : 'side'"
+		[opened]="drawerOpened()"
+		(openedChange)="drawerOpened.set($event)"
+	>
+		<app-shell-sidenav [mainNavItems]="mainNavItems" [bottomNavItems]="bottomNavItems" (syncRequested)="onSyncRequested()" />
+	</mat-sidenav>
+	<mat-sidenav-content class="shell__content">
+		<app-shell-header
+			[isHandset]="isHandset()"
+			[drawerOpened]="drawerOpened()"
+			[breadcrumbs]="shellState()?.breadcrumbs ?? []"
+			(toggleDrawer)="toggleDrawer()"
+		/>
+		<main class="shell__main">
+			<router-outlet />
+		</main>
+	</mat-sidenav-content>
+</mat-sidenav-container>

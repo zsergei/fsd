@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+html {
+	color-scheme: light;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: var(--mat-sys-surface);
+	color: var(--mat-sys-on-surface);
+	font: var(--mat-sys-body-medium);
+	letter-spacing: var(--mat-sys-body-medium-tracking);
+	margin: 0;
+}
+
+app-root {
+	display: block;
+	height: 100%;
+}
+
+$typography-only-theme: mat.define-theme(
+	(
+		typography: (
+			plain-family: Roboto
+		)
+	)
+);
+
+html {
+	@include mat.typography-hierarchy($typography-only-theme, 'html', false);
+}

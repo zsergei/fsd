@@ -1,0 +1,5 @@
+<h2 mat-dialog-title>Syncing Airtable data</h2>
+<mat-dialog-content>
+	<mat-progress-bar [mode]="progressMode()" [value]="progressValue()" />
+	<p class="airtable-sync-dialog__status">{{ statusMessage() }}</p>
+</mat-dialog-content>

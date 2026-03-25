@@ -1,0 +1,52 @@
+{
+  "name": "fsd-app",
+  "version": "0.0.1-dev",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "dev": "ng serve",
+    "build": "ng build",
+    "build:dev": "ng build --configuration=dev",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "eslint ."
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.2.20",
+    "@angular/cdk": "^19.2.19",
+    "@angular/common": "^19.2.0",
+    "@angular/compiler": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "@angular/material": "^19.2.19",
+    "@angular/platform-browser": "^19.2.0",
+    "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/router": "^19.2.0",
+    "ag-grid-angular": "^33.3.2",
+    "ag-grid-community": "^33.3.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.22",
+    "@angular/cli": "^19.2.22",
+    "@angular/compiler-cli": "^19.2.0",
+    "@eslint/js": "^9.39.4",
+    "@types/jasmine": "~5.1.0",
+    "angular-eslint": "^19.8.1",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-boundaries": "^6.0.1",
+    "eslint-plugin-perfectionist": "^5.7.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "jasmine-core": "~5.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.57.1"
+  }
+}
