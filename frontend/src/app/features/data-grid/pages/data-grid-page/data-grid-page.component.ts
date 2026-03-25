@@ -48,6 +48,10 @@ export class DataGridPageComponent {
 
 	readonly isGridReady = computed(() => this.selectedCollection() !== null);
 
+	readonly isTotalRowCountPending = computed(() => this.loading());
+
+	readonly totalRowCount = computed(() => this.rowData().length);
+
 	/** Initializes the component and sets up the collection data loading effect. */
 	constructor() {
 		effect(() => {

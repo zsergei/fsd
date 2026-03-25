@@ -84,7 +84,8 @@ export class AirtableCredentialsDialogComponent {
 				}),
 				catchError(() => {
 					this.loading.set(false);
-					this.errorMessage.set('MFA verification failed. Please try again.');
+					this.errorMessage.set('MFA verification failed. Enter a new code and try again.');
+					this.mfaCodeControl.setValue('');
 					return EMPTY;
 				})
 			)

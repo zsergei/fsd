@@ -35,17 +35,27 @@
 	}
 
 	@if (isGridReady()) {
-		<div class="data-grid-page__grid-wrap">
-			<ag-grid-angular
-				class="data-grid-page__grid"
-				[rowData]="rowData()"
-				[columnDefs]="columnDefs()"
-				[defaultColDef]="defaultColDef"
-				[quickFilterText]="quickFilterText()"
-				[loading]="loading()"
-				[suppressFieldDotNotation]="true"
-				[suppressCellFocus]="true"
-			/>
+		<div class="data-grid-page__grid-section">
+			<div class="data-grid-page__grid-wrap">
+				<ag-grid-angular
+					class="data-grid-page__grid"
+					[rowData]="rowData()"
+					[columnDefs]="columnDefs()"
+					[defaultColDef]="defaultColDef"
+					[quickFilterText]="quickFilterText()"
+					[loading]="loading()"
+					[suppressFieldDotNotation]="true"
+					[suppressCellFocus]="true"
+				/>
+			</div>
+			<div class="data-grid-page__footer">
+				<span class="data-grid-page__footer-label">Total rows:</span>
+				@if (isTotalRowCountPending()) {
+					<span class="data-grid-page__footer-value" aria-busy="true">…</span>
+				} @else {
+					<span class="data-grid-page__footer-value">{{ totalRowCount() }}</span>
+				}
+			</div>
 		</div>
 	} @else {
 		<div class="data-grid-page__empty">

@@ -70,12 +70,41 @@
 	margin-bottom: 0.5rem;
 }
 
+.data-grid-page__grid-section {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 0;
+}
+
 .data-grid-page__grid-wrap {
 	flex: 1;
 	min-height: 0;
 	overflow: hidden;
 	border: 1px solid var(--mat-sys-outline-variant);
 	border-radius: 0.5rem;
+}
+
+.data-grid-page__footer {
+	align-items: baseline;
+	color: var(--mat-sys-on-surface-variant);
+	display: flex;
+	flex-shrink: 0;
+	font-size: 0.8125rem;
+	gap: 0.35rem;
+	justify-content: flex-end;
+	line-height: 1.4;
+	padding-top: 0.5rem;
+}
+
+.data-grid-page__footer-label {
+	white-space: nowrap;
+}
+
+.data-grid-page__footer-value {
+	font-variant-numeric: tabular-nums;
+	min-width: 1ch;
+	text-align: right;
 }
 
 .data-grid-page__grid {
